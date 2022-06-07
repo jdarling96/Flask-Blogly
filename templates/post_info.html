@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block title %}Post Information{% endblock %}
+
+{% block content %}
+<div class="post-info">
+    <h1>{{post.title}}</h1>
+    <p>{{post.content}}</p>
+    <b>By {{post.user.first_name}} {{post.user.last_name}}</b>
+    <br>
+    <button onclick="window.location.href='/users/{{post.user.id}}'">Cancel</button>
+    <button onclick="window.location.href='/posts/{{post.user.id}}/edit'">Edit</button>
+    <button onclick="window.location.href='/posts/{{post.user.id}}/delete'">Delete</button>
+
+
+
+</div>
+
+
+
+
+{% endblock %}

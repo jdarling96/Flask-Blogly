@@ -10,6 +10,17 @@
 <button onclick="window.location.href='/users/{{user.id}}/delete'">Delete</button>
 <button onclick="window.location.href='/users/{{user.id}}/edit'">Edit</button>
 </div>
+<div class="user-posts">
+    <h3>Posts</h3>
+    <ul>
+        {% for post in posts %}
+        <li>{{post.title}}</li>
+        {% endfor %}
+       
+    </ul>
+    <button onclick="window.location.href='/users/{{user.id}}/posts/new'">Add Post</button>
+
+</div>
 
 
 
