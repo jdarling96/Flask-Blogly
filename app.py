@@ -77,7 +77,7 @@ def delete_user(user_id):
 
 @app.route('/users/<user_id>/posts/new', methods=["GET", "POST"])
 def new_post(user_id):
-    if request.methods == "GET":
+    if request.method == "GET":
         user = User.query.get(user_id)
         return render_template('add_post.html', user=user)
     else:
