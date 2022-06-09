@@ -12,9 +12,9 @@
         <input type="text" name="last-name" placeholder="{{edit.last_name}}">
         <label for="img-url">Image URL</label>
         <input type="text" name="img-url" placeholder="{{edit.image_url}}">
+        <button onclick="window.location.href='/users/{{edit.id}}'" type="reset">Cancel</button>
         <button type="submit">Save</button>
     </form>
-    <button onclick="window.location.href='/users/{{edit.id}}'">Cancel</button>
     </div>
 
 

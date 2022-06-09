@@ -4,15 +4,25 @@
 
 {% block content %}
 <div class="post-info">
+    
     <h1>{{post.title}}</h1>
     <p>{{post.content}}</p>
-    <b>By {{post.user.first_name}} {{post.user.last_name}}</b>
+    <b>By {{post.user.first_name}} {{post.user.last_name}} on {{post.friendly_date}}</b>
     <br>
-    <button onclick="window.location.href='/users/{{post.user.id}}'">Cancel</button>
-    <button onclick="window.location.href='/posts/{{post.user.id}}/edit'">Edit</button>
-    <button onclick="window.location.href='/posts/{{post.user.id}}/delete'">Delete</button>
-
-
+    <b>Tags:</b>
+    {% for tag in tags %}
+    <p>{{tag.name}}</p>
+    {% endfor %}
+    <form>
+    <button formmethod="get" 
+    formaction='/users/{{post.user.id}}'>Cancel</button>
+    <button  formmethod="get" 
+    formaction='/posts/{{post.id}}/edit'>Edit</button>
+    <button 
+    formmethod="POST"
+    formaction="/posts/{{post.id}}/delete">Delete
+</button>
+</form>
 
 </div>
 

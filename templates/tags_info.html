@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+
+{% block title %}Tags Information{% endblock %}
+
+{% block content %}
+
+<div class="Tags">
+    <h2>{{tags.name}}</h2>
+    <ul>
+        {% for title in titles %}
+        <li><a href="/posts/{{title.id}}">{{title.title}}</a></li>
+        {% endfor %}
+       
+    </ul>
+    <button onclick="window.location.href='/tags/{{tags.id}}/edit'">Edit</button>
+    <button onclick="window.location.href='/tags/{{tags.id}}/delete'">Delete</button>
+
+</div>
+
+{% endblock %}

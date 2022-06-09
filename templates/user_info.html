@@ -7,8 +7,9 @@
 </div>
 <div class="user-info">
 <h2>{{user.first_name}} {{user.last_name}}</h2>
-<button onclick="window.location.href='/users/{{user.id}}/delete'">Delete</button>
-<button onclick="window.location.href='/users/{{user.id}}/edit'">Edit</button>
+<form>
+<button formmethod="POST" formaction='/users/{{user.id}}/delete'>Delete</button>
+<button formmethod="GET"formaction='/users/{{user.id}}/edit'>Edit</button>
 </div>
 <div class="user-posts">
     <h3>Posts</h3>
@@ -18,8 +19,8 @@
         {% endfor %}
        
     </ul>
-    <button onclick="window.location.href='/users/{{user.id}}/posts/new'">Add Post</button>
-
+    <button formmethod="GET" formaction='/users/{{user.id}}/posts/new'>Add Post</button>
+</form>
 </div>
 
 

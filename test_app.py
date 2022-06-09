@@ -54,7 +54,8 @@ class UserViewsTestCase(TestCase):
             resp = client.get('/')
             html = resp.get_data(as_text=True)
 
-            self.assertEqual(resp.status_code, 302)
+            self.assertEqual(resp.status_code, 200)
+            self.assertIn('Blogly Recent Posts', html)
             
 
     def test_show_user(self):
