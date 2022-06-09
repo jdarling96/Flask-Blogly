@@ -141,7 +141,7 @@ class UserViewsTestCase(TestCase):
             resp = client.get(f'/posts/{self.post_id}/delete', follow_redirects=True)
             
             
-            self.assertEqual(resp.status_code, 200)
+            self.assertEqual(resp.status_code, 302)
 
     def test_updated_user_page(self):
         with app.test_client() as client:

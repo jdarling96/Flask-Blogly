@@ -30,7 +30,7 @@ class User(db.Model):
 
     image_url = db.Column(db.String(200), unique=True)
 
-    posts = db.relationship("Post", backref="user", cascade="all, delete")
+    posts = db.relationship("Post", backref="user", cascade="all, delete-orphan")
 
 
 class Post(db.Model):
@@ -56,7 +56,7 @@ class Post(db.Model):
 
     
 
-    relation = db.relationship('PostTag', backref='posts')
+    relation = db.relationship('PostTag', backref='posts', cascade="all, delete-orphan")
 
     @property
     def friendly_date(self):
